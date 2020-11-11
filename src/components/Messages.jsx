@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { auth } from '../firebase'
 import './Messages.scss'
 
 function Messages ({ messages }) {
@@ -11,7 +12,8 @@ function Messages ({ messages }) {
   return <div className="Messages" ref={ref}>
     {
       messages.map(message =>{
-        const messageClass = message.user.email === 'daniel.bonifacio@algaworks.com'
+        const user = auth().currentUser
+        const messageClass = message.user.uid === user.uid
           ? 'outgoing'
           : 'incoming'
 
