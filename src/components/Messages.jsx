@@ -1,7 +1,14 @@
+import { useEffect, useRef } from 'react'
 import './Messages.scss'
 
 function Messages ({ messages }) {
-  return <div className="Messages">
+  const ref = useRef(null)
+
+  useEffect(() => {
+    ref.current.scrollTop = ref.current.scrollHeight
+  }, [messages])
+
+  return <div className="Messages" ref={ref}>
     {
       messages.map(message =>{
         const messageClass = message.user.email === 'daniel.bonifacio@algaworks.com'
