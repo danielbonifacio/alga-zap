@@ -8,6 +8,17 @@
 
   .Message {
     display: flex;
+    animation: pop .25s ease;
+
+    @keyframes pop {
+      from {
+        transform: scale(0)
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
     
     &.outgoing {
       justify-content: flex-end;

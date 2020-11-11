@@ -9,4 +9,9 @@
   > :nth-child(1) {
     flex-grow: 1;
   }
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    height: calc(100vh - 84px);
+  }
 }

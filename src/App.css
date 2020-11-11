@@ -9,14 +9,15 @@
 }
 
 .App .Logo {
-  margin-bottom: 24px;
+  margin: 24px 0;
 }
 
 .App .Logo img {
-  width: 120px;
+  height: 32px;
   transition: .25s ease;
 }
 
 .App .Logo img:hover {
   transform: scale(1.2);
 }
+
